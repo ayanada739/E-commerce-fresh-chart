@@ -1,0 +1,58 @@
+<!-- <div class="container w-75 mx-auto p-3 my-5">
+  <div class="row g-5 ">
+    <div class="col-md-3  position-relative" *ngFor="let item of wishListProducts">
+      <div class="product p-2">
+        <div class="cursor-pointer " [routerLink]="['/details', item._id]">
+          <img [src]="item.imageCover" alt="item" class="w-100">
+          <h3 class="h6 text-center mt-2">{{item.category.name}}</h3>
+          <h2 class="h6 text-center mt-2">{{item.title|cuttext:3}}</h2>
+          <div class="d-flex justify-content-between">
+            <p>{{item.price}}<span>EGP</span></p>
+            <div class="rating ">
+              <i class="fa-solid fa-star rating-color"></i>
+              <span>{{item.ratingsAverage}}</span>
+            </div>
+          </div>
+        </div>
+        <button class="w-100 main-btn">Add Product</button>
+      </div>
+    </div>
+
+  </div>
+
+</div> -->
+
+
+
+<div class="container p-5 my-5">
+  <div class="row g-5 ">
+    <div class="col-md-3  position-relative" *ngFor="let item of wishListProducts ">
+      <i class="fa-regular fa-heart heart" (click)="addtoWishList(item._id)"
+        *ngIf="!wishListData.includes($any(item._id))"></i>
+
+
+      <i class="fa-solid fa-heart heart" (click)="removeFromWishList(item._id)"
+        *ngIf="wishListData.includes($any(item._id))"></i>
+      <div class="product p-2">
+        <div class="cursor-pointer " [routerLink]="['/details', item._id]">
+          <img [src]="item.imageCover" alt="item" class="w-100">
+          <h3 class="h6">{{item.category.name}}</h3>
+          <div class="d-flex justify-content-between">
+            <h2 class="h6">{{item.title|cuttext:3}}</h2>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <p>{{item.price}}<span>EGP</span></p>
+            <div class="rating ">
+              <i class="fa-solid fa-star rating-color"></i>
+              <span>{{item.ratingsAverage}}</span>
+            </div>
+          </div>
+        </div>
+        <button class="w-100 main-btn" (click)="addProduct(item._id,cartBtn)" #cartBtn>Add To Cart</button>
+
+      </div>
+    </div>
+
+  </div>
+</div>

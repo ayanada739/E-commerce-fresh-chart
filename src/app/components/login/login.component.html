@@ -1,0 +1,29 @@
+<div class="w-75 mx-auto my-5">
+  <h1 class="text-main pb-2">Login Now:</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="loginMethod()">
+    <div class="mt-4">
+      <label for="email" class="fw-bold ">Email:</label>
+      <input id="email" type="text" class="form-control " formControlName="email">
+      <div class="alert msgAlert" *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+        <P *ngIf="loginForm.get('email')?.getError('required')">Email Is Requrired</P>
+        <P *ngIf="loginForm.get('email')?.getError('email')">Enter valid email</P>
+      </div>
+    </div>
+    <div class="my-4 ">
+      <label for="password" class="fw-bold ">Password:</label>
+      <input id="password" type="password" class="form-control " formControlName="password">
+      <div class="alert msgAlert" *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+        <P *ngIf="loginForm.get('password')?.getError('required')">Password Is Requrired</P>
+        <P *ngIf="loginForm.get('password')?.getError('pattern')">must be
+          * Start with a letter (either uppercase or lowercase).
+          * Be between 6 and 9 characters in total.
+          * Can only contain letters (A-Z or a-z) and nuters (0-9)</P>
+      </div>
+    </div>
+    <div class="d-flex justify-contene-between align-items-center">
+      <button class="main-btn d-block ms-auto " [disabled]="loginForm.invalid">
+        Login <i class=" fas fa-spin fa-spinner" *ngIf="isLoading"></i></button>
+      <button class="btn forget fw-bold" [routerLink]="['/forgetPassword']">Forget Password?</button>
+    </div>
+  </form>
+</div>

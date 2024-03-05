@@ -1,0 +1,21 @@
+:host{
+  display: flex;
+flex-direction: column;
+justify-content: space-between;
+min-height: 100vh;
+}
+.blankLatout{
+  padding-top: 60px;
+}
+.btnup{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 999;
+  background-color: #0aad0a;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  width: 40px;
+  height: 40px;
+}

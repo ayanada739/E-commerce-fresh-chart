@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+  $main-color:#0aad0a;
+  $light-color: #f0f3f2;
+  $shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+  $rating-color: #ffc908;
+  $main-transition:.8s;
+  $font-family:"Encode Sans Expanded", sans-serif;
+
+
+body{
+  font-family: $font-family;
+}
+.rating-color{
+  color: $rating-color;
+}
+.main-btn{
+  background-color: $main-color !important;
+    color: #fff !important;
+  padding: 5px 8px !important;
+  border: unset !important;
+  border-radius: 5px !important;
+  &:disabled{
+    background-color:#0aad0a;
+    ;
+    color: #ffffffe6;
+    cursor: not-allowed;
+    border-radius: 5px;
+  }
+}
+.forget:hover{
+  color: $main-color !important;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.logo{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: $main-color !important;
+  padding-top: 6px;
+}
+.active-link{
+  background-color: $main-color !important;
+  color: #fff !important;
+  border-radius: 5px;
+}
+.text-main{
+  color: $main-color !important;
+}
+.bg-main{
+  background-color: $light-color
+}
+.fontSm{
+  font-size: .75rem;
+}
+.product{
+  border-radius: 5px;
+  padding: 4px;
+  overflow: hidden;
+  transition: all .5s;
+  position: relative;
+
+}
+.heart{
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+}
+.product:hover{
+  box-shadow:  $shadow ;
+  transform: scale(1.1);
+}
+.product .main-btn{
+  transform: translateY(150%);
+  transition: transform $main-transition;
+}
+.product:hover .main-btn{
+  transform: translateY(0);
+}
+.msgAlert{
+  $main-color:#1e86ee;
+  background-color:#1e86ee  !important;
+  color: $main-color !important;
+}
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: $light-color;
+}
+::-webkit-scrollbar-thumb{
+  background-color: $main-color;
+}
+

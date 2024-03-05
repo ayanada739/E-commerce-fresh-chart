@@ -1,0 +1,14 @@
+<div class="container p-5">
+  <div class="row g-5 ">
+    <h2 class=" text-main">All Brands</h2>
+    <div class="col-md-3  position-relative" *ngFor="let item of Brands">
+      <div class="product p-2">
+        <div class="cursor-pointer " [routerLink]="['/details', item._id]">
+          <img [src]="item.image" [alt]="item.name" class="w-100" style="height: 350px;">
+          <h3 class="text-center text-main h6">{{item.name}}</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
